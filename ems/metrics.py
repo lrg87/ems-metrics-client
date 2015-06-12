@@ -11,16 +11,16 @@ class MetricsClient(object):
 
     """Metrics client object
     """
-    def __init__(self, app_id=None, host='127.0.0.1', port=1800):
+    def __init__(self, appid=None, host='127.0.0.1', port=1800):
 
         """initialization metric client
 
-        :param app_id: app id, if you not set, when you send metrics, you mus be give it
+        :param appid: app id, if you not set, when you send metrics, you mus be give it
         :param host: ems-collector host, default is '127.0.0.1',
         :param port: ems-collector port, default is 1800
         :return: Nothing
         """
-        self.app_id = app_id
+        self.appid = appid
         self.host = host
         self.port = port
 
@@ -42,13 +42,13 @@ class MetricsClient(object):
 
     def _set_app_id(self, tags=None):
         if tags is None:
-            if self.app_id is None:
-                raise ValueError("app_id is require")
-            return {'app_id': self.app_id}
-        elif 'app_id' not in tags.keys():
-            if self.app_id is None:
-                raise ValueError("app_id is require")
-            tags['app_id'] = self.app_id
+            if self.appid is None:
+                raise ValueError("appid is require")
+            return {'appid': self.appid}
+        elif 'appid' not in tags.keys():
+            if self.appid is None:
+                raise ValueError("appid is require")
+            tags['appid'] = self.appid
             return tags
         return tags
 
@@ -130,7 +130,7 @@ class Timer(object):
 
 if __name__ == '__main__':
     import time
-    client = MetricsClient(app_id='test')
+    client = MetricsClient(appid='test')
     client.set("count_test", 5)
     client.timing("timing_test", 35.6)
 
