@@ -16,6 +16,7 @@ setup(
     description='EMS metrics client',
     long_description=readme(),
     url='https://git.elenet.me/opdev/ems-metrics-client',
+    download_url='https://github.com/eleme/ems-metrics-client/tarball/v0.0.2'
     packages=['ems'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
